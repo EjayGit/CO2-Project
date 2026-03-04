@@ -155,8 +155,8 @@ async function getData() {// create 'comments' elements from API object
 				}
 			}
 		});
-		resUlt.innerText=userData[19].totalco2;	
-		pResult.innerText=userData[19].username + "'s Result";
+		//resUlt.innerText=userData[19].totalco2;	
+		//pResult.innerText=userData[19].username + "'s Result";
 		// console.log(userData);
 		userForm.reset();
 
