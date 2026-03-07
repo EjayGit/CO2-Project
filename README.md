@@ -62,6 +62,7 @@
 - Further investigation into chart design and appearance.
 - Page design and appearance.
 - Delete user via username.
+- The user value does not rely on 20 users being in the database before it is displayed.
 
 ## Lighthouse Report
 
