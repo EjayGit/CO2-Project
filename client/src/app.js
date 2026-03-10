@@ -2,19 +2,23 @@ let gas = false;
 let coal = false;
 let wood = false;
 let elec = false;
+let oil = false;
 
-const lowGas = 0.018029 / 2;
-const medGas = 0.018029;
-const highGas = 0.018029 * 1.5;
-const lowCoal = 0.3019 / 2;
-const medCoal = 0.3019;
-const highCoal = 0.3019 * 1.5;
+const lowGas = 0.18259 / 2;
+const medGas = 0.18259;
+const highGas = 0.18259 * 2;
+const lowCoal = 0.31459 / 2;
+const medCoal = 0.31459;
+const highCoal = 0.31459 * 2;
 const lowWood = 0.165 / 2;
 const medWood = 0.165;
-const highWood = 0.165 * 1.5;
+const highWood = 0.165 * 2;
 const lowElec = 0.3369 / 2;
 const medElec = 0.3369;
-const highElec = 0.3369 * 1.5;
+const highElec = 0.3369 * 2;
+const lowOil = 0.26709 / 2;
+const medOil = 0.26709;
+const highOil = 0.26709 * 2;
 
 const busFactor = 0.12525;
 const carFactor = 0.27201;
@@ -56,11 +60,10 @@ function eventHandler(submitEvent) {
 		if (userEntry.elecHeat !== undefined) {
 			elec = true;
 		}
+		if (userEntry.oilHeat !== undefined) {
+			oil = true;
+		}
 		//// Calculate average CO2 emmission.
-		// TravelCO2 = (busMiles* factor) +
-		//(carMiles* factor) +
-		//(trainMiles* factor) +
-		//(airMiles* factor)
 		const travelCO2 = (busMiles * busFactor) + (carMiles * carFactor) + (trainMiles * trainFactor) + (airMiles * (airFactor / 365));
 
 		// HomeCO2 = if energyUseage == low -> if gas == true -> lowgasenergy / number of elements +
@@ -71,18 +74,21 @@ function eventHandler(submitEvent) {
 			if(coal == true){ homeCO2 += lowCoal/numChecks; }
 			if(wood == true){ homeCO2 += lowWood/numChecks; }
 			if(elec == true){ homeCO2 += lowElec/numChecks; }
+			if(oil == true){ homeCO2 += lowOil/numChecks; }
 			homeCO2 += lowElec;
 		} else if(userEntry.energyUsage == 'm'){
 			if(gas == true){ homeCO2 += medGas/numChecks; }
 			if(coal == true){ homeCO2 += medCoal/numChecks; }
 			if(wood == true){ homeCO2 += medWood/numChecks; }
 			if(elec == true){ homeCO2 += medElec/numChecks; }
+			if(oil == true){ homeCO2 += medOil/numChecks; }
 			homeCO2 += lowElec;
 		} else if(userEntry.energyUsage == 'h'){
 			if(gas == true){ homeCO2 += highGas/numChecks; }
 			if(coal == true){ homeCO2 += highCoal/numChecks; }
 			if(wood == true){ homeCO2 += highWood/numChecks; }
 			if(elec == true){ homeCO2 += highElec/numChecks; }
+			if(oil == true){ homeCO2 += highOil/numChecks; }
 			homeCO2 += lowElec;
 		} else{
 			// return error
@@ -155,9 +161,9 @@ async function getData() {// create 'comments' elements from API object
 				}
 			}
 		});
-		//resUlt.innerText=userData[19].totalco2;	
-		//pResult.innerText=userData[19].username + "'s Result";
-		// console.log(userData);
+		resUlt.innerText=userData[userData.length - 1].totalco2;	
+		pResult.innerText=userData[userData.length - 1].username + "'s Result (kg CO2 per day)";
+		console.log(userData);
 		userForm.reset();
 
 	} catch (error) {
