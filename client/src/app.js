@@ -4,26 +4,28 @@ let wood = false;
 let elec = false;
 let oil = false;
 
-const lowGas = 0.18259 / 2;
-const medGas = 0.18259;
-const highGas = 0.18259 * 2;
-const lowCoal = 0.31459 / 2;
-const medCoal = 0.31459;
-const highCoal = 0.31459 * 2;
-const lowWood = 0.165 / 2;
-const medWood = 0.165;
-const highWood = 0.165 * 2;
-const lowElec = 0.3369 / 2;
-const medElec = 0.3369;
-const highElec = 0.3369 * 2;
-const lowOil = 0.26709 / 2;
-const medOil = 0.26709;
-const highOil = 0.26709 * 2;
+// units are in kg of CO2 per kWh.
+const lowGas = 4*0.18259;
+const medGas = 8*0.18259;
+const highGas = 12*0.18259;
+const lowCoal = 4*0.31459;
+const medCoal = 8*0.31459;
+const highCoal = 12*0.31459;
+const lowWood = 4*0.165;
+const medWood = 8*0.165;
+const highWood = 12*0.165;
+const lowElec = 4*0.3369;
+const medElec = 8*0.3369;
+const highElec = 12*0.3369;
+const lowOil = 4*0.26709;
+const medOil = 8*0.26709;
+const highOil = 12*0.26709;
 
+// units are kg CO2 per mile.
 const busFactor = 0.12525;
-const carFactor = 0.27201;
-const trainFactor = 0.03652;
-const airFactor = 0.22927;
+const carFactor = 0.27368;
+const trainFactor = 0.1;
+const airFactor = 0.25;
 
 const userForm = document.getElementById("co2Form")
 const ctx = document.getElementById("myChart");
@@ -95,10 +97,15 @@ function eventHandler(submitEvent) {
 			console.error(`Error Message: error with form input.`);
 		}
 
+		console.log(homeCO2);
+
 		// TotalCO2 = TravelCO2 + HomeCO2
 		let name = userEntry.userName;
 		const total = homeCO2 + travelCO2;	
 		const totalCO2 = parseFloat(total.toFixed(2));
+
+		console.log(totalCO2);
+
 		// Send emmission data to form.
 		fetch('https://co2-project-server.onrender.com/sendForm',{
 		//fetch('http://localhost:8080/sendForm',{
@@ -108,7 +115,7 @@ function eventHandler(submitEvent) {
 		},
 		body: JSON.stringify({totalCO2, name}),
 		});
-		setTimeout(timerFunc, 3000);
+		setTimeout(timerFunc, 2000);
 	} catch (error) {
 		console.error(error.message);
 	}
