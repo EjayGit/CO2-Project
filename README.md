@@ -57,20 +57,20 @@
 
 ## Stretch Goals
 
-- Submit button redesign.
+- Submit button redesign. ✅
+- The user value does not rely on 20 users being in the database before it is displayed. ✅
+- Confirm that values being recorded are accurate. ✅
+- Add oil to energy usage. ✅
+- Add Andrew as a colab to github. ✅
+- Further investigation into chart design and appearance. ✅
 - Background image with translucent overlay.
-- Further investigation into chart design and appearance.
 - Page design and appearance.
 - Delete user via username.
-- The user value does not rely on 20 users being in the database before it is displayed.
-- Confirm that values being recorded are accurate.
 - Shows either last 20 users, or only logged in user data.
 - Advertising.
 - Google AdSense.
 - Amazon ad sense equivalent.
 - Microsoft equivalent.
-- Add oil to energy usage.
-- Add Andrew as a colab to github.
 
 ## Lighthouse Report
 
