@@ -1,4 +1,4 @@
-# Group Assignment
+# CO2 Project
 
 ## Our User Stories
 1. As a user, I want to be able to enter my name, and carbon footprint stats into a form.
