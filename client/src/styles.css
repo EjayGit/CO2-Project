@@ -9,9 +9,9 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #444;
   line-height: 150%;
-  /* background-image: url(../images/images/Gemini_Generated_Image_r3vlokr3vlokr3vl.png); */
+  background-image: url(../images/images/Gemini_Generated_Image_r3vlokr3vlokr3vl.png);
   /* background-position: center; */
-  /* background-size: cover; */
+  background-size: cover;
 }
 
 button,
@@ -24,27 +24,36 @@ input[type=number] {
 }
 
 main {
-  padding: 5% 8% 8% 8%;
+  padding: 2% 4% 4% 4%;
 }
 
 img {
   display: block;
   width: 100%;
   height: auto;
+  margin: 20px;
 }
 
 h1 {
-  color: #5fcf4e;
-  font-size: 800%;
+  color: #4abb39;
+  font-size: 4rem;
   text-align: center;
+  background-color: rgba(1,1,1,0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 2rem;
+  padding: 8px;
 }
 
 h2 {
-  color: #7a7a7a;
-  margin-top: 200px;
-  font-size: 300%;
+  color: #3b3b3b;
+  margin-top: 10px;
+  font-size: 2rem;
   line-height: 150%;
   text-align: center;
+  background-color: rgba(1,1,1,0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 2rem;
+  padding: 8px;
 }
 
 label {
@@ -60,7 +69,8 @@ form {
   padding: 5%;
   background-color: #fafafa;
   text-align: center;
-  margin: 8% auto 0 auto;
+  margin: 5% auto 0 auto;
+  background-color: rgba(1,1,1,0);
 }
 
 form,
@@ -72,7 +82,7 @@ fieldset {
 fieldset {
   padding: 1.6em;
   margin-bottom: 3em;
-  background-color: #f0fbef;
+  background-color: #f0fbef00;
 }
 
 input {
@@ -129,22 +139,31 @@ select {
 }
 
 header {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  align-items: center;
 }
 
-header,
-footer {
+header{
   padding: 50px 10% 50px 10%;
 }
 
 #graph {
   background-color: #fff;
+  width: 100%;
+  height: auto;
+  border:#444;
 }
 
 footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   font-size: 20px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
   background-color: #73da63;
   border-top: #0a4e00 6px ridge;
   font-weight: bold;
@@ -211,7 +230,7 @@ label {
 
 #resultWrap p {
   text-align: center;
-  padding: 1em;
+  padding:5px;
 }
 
 #result {
@@ -222,5 +241,22 @@ label {
   width: 200px;
   height: 100px;
   font-size: 200%;
-  margin: 0 auto 15% auto;
+  margin: 0 auto 5% auto;
+}
+
+.imageDisplay{
+  width: 200px;
+  height: auto;
+}
+
+.imageDisplayFoot{
+  width: 65px;
+  height: auto;
+}
+
+.chartImgSec{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
 }
