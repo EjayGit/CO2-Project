@@ -63,8 +63,8 @@
 - Add oil to energy usage. ✅
 - Add Andrew as a colab to github. ✅
 - Further investigation into chart design and appearance. ✅
-- Background image with translucent overlay.
-- Page design and appearance.
+- Background image with translucent overlay. ✅
+- Page design and appearance. ✅
 - Delete user via username.
 - Shows either last 20 users, or only logged in user data.
 - Advertising.
